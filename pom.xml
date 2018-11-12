@@ -6,7 +6,11 @@
 
     <groupId>service.socialbook.statistic</groupId>
     <artifactId>socialbook-statistic-service</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>api</module>
+    </modules>
 
 
 </project>
