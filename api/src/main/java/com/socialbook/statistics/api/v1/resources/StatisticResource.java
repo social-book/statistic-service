@@ -1,7 +1,7 @@
 package com.socialbook.statistics.api.v1.resources;
 
 import com.socialbook.statistic.entites.Statistic;
-import com.socialbook.statistic.services.StatisticBean;
+import com.socialbook.statistic.services.StatisticsBean;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
@@ -22,7 +22,7 @@ public class StatisticResource {
     protected UriInfo uriInfo;
 
     @Inject
-    StatisticBean statisticBean;
+    StatisticsBean statisticBean;
 
     @GET
     public Response getAll() {

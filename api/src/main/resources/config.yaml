@@ -1,5 +1,5 @@
 kumuluzee:
-  name: statistic-services
+  name: statistic-service
   env:
     name: dev
   version: 1.0.0
@@ -13,23 +13,12 @@ kumuluzee:
       username: postgres
       password: postgres
       max-pool-size: 20
-  health:
-    checks:
-      data-source-health-check:
-        jndi-name: jdbc/StatisticsDS
   config:
     etcd:
       hosts: http://192.168.99.100:2379
   discovery:
     etcd:
       hosts: http://192.168.99.100:2379
-  metrics:
-    web-instrumentation:
-      - name: statistics-endpoint
-        url-pattern: /v1/statistics/*
-  openapi:
-    ui:
-      enabled: true
 app-properties:
   external-services:
     enabled: false
