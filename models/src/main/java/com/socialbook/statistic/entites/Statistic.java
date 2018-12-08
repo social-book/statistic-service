@@ -16,11 +16,8 @@ public class Statistic {
     @Column(name = "timestamp")
     private String timestamp;
 
-    @Column(name = "request_from")
-    private String request_from;
-
-    @Column(name = "request_to")
-    private String request_to;
+    @Column(name = "service_name")
+    private String service_name;
 
 
     public Integer getStat_id() {
@@ -39,19 +36,11 @@ public class Statistic {
         this.timestamp = timestamp;
     }
 
-    public String getRequest_from() {
-        return request_from;
+    public String getService_name() {
+        return service_name;
     }
 
-    public void setRequest_from(String request_from) {
-        this.request_from = request_from;
-    }
-
-    public String getRequest_to() {
-        return request_to;
-    }
-
-    public void setRequest_to(String request_to) {
-        this.request_to = request_to;
+    public void setService_name(String service_name) {
+        this.service_name = service_name;
     }
 }

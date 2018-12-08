@@ -34,6 +34,14 @@ public class StatisticResource {
         return Response.status(Response.Status.NOT_FOUND).build();
     }
 
+    @GET
+    @Path("/collect/{service_name}")
+    public Response addNewStatGet(@PathParam("service_name") String serviceName) {
+        Statistic statistic = new Statistic();
+        statistic.setService_name(serviceName);
+        return addNewStat(statistic);
+    }
+
     @POST
     @Path("/collect")
     public Response addNewStat(Statistic statistic) {
