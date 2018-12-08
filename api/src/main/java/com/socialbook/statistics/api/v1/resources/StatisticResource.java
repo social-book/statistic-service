@@ -45,7 +45,7 @@ public class StatisticResource {
     @POST
     @Path("/collect")
     public Response addNewStat(Statistic statistic) {
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd, HH:mm: ss");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd, HH:mm:ss");
         Date date = new Date();
         statistic.setTimestamp(sdf.format(date.getTime()) + "");
         statisticBean.insertStat(statistic);
