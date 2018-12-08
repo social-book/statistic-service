@@ -10,6 +10,9 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
+import java.security.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 @RequestScoped
@@ -32,7 +35,11 @@ public class StatisticResource {
     }
 
     @POST
+    @Path("/collect")
     public Response addNewStat(Statistic statistic) {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd, HH:mm: ss");
+        Date date = new Date();
+        statistic.setTimestamp(sdf.format(date.getTime()) + "");
         statisticBean.insertStat(statistic);
         return Response.status(Response.Status.CREATED).build();
     }
